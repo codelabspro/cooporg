@@ -37,3 +37,7 @@ they are available on every page via layout.ejs
 
 ### To generate user model and controller 
 sails generate api user
+
+Enable module.exports.csrf = true; in config/csrf.js
+
+Turn on the following blueprints in config/blueprints.js : prefix, actions, shortcuts, rest

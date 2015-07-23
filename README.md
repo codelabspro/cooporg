@@ -44,3 +44,11 @@ Turn on the following blueprints in config/blueprints.js : prefix, actions, shor
 ### Improve error handling
 
 Change UserController.js to have better error handling 
+
+
+### Client-side validation with policies
+
+Policies are middleware functions which run before controllers
+Any of these policies can be applied to a given controller or one or more of its actions within the controller
+
+

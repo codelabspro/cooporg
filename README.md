@@ -41,3 +41,6 @@ sails generate api user
 Enable module.exports.csrf = true; in config/csrf.js
 
 Turn on the following blueprints in config/blueprints.js : prefix, actions, shortcuts, rest
+### Improve error handling
+
+Change UserController.js to have better error handling 

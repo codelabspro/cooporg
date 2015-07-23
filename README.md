@@ -35,3 +35,5 @@ and minified via this layout.ejs file when sails lifts
 This is a way we can use twitter bootstrap and drop our twitter bootstrap javascript and css files and 
 they are available on every page via layout.ejs
 
+### To generate user model and controller 
+sails generate api user

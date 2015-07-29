@@ -68,6 +68,7 @@ module.exports = {
 				 res.redirect('/session/new');
 				 return;
 			 }
+			 console.log('About to log the user in');
 			 // Log user in
 			 req.session.authenticated = true;
 			 req.session.User = user;
@@ -97,5 +98,11 @@ module.exports = {
 			 */
 		 });
 	 });
+ },
+ 'destroy': function(req, res, next) {
+	 // Wipe out the session (logout)
+	 req.session.destroy();
+	 // Redirect the browser to the sign-in screen
+	 res.redirect('/session/new');
  }
 };

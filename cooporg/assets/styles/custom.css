@@ -1131,9 +1131,9 @@ header.header .logo .icon {
 -----------------------------------------------------------------
 */
 .form-control {
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  border-radius: 0px !important;
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
+  border-radius: 4px !important;
   box-shadow: none;
 }
 .form-control:focus {

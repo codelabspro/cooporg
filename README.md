@@ -1,4 +1,7 @@
 # cooporg
+
+Ep12 : https://www.youtube.com/watch?v=xotjd935ARY
+
 - nvm ls-remote
 
 - nvm use 0.12.7

@@ -54,10 +54,15 @@ module.exports = {
 		 }
 		 // Compare password from the form params to the encrypted password of the user found.
 		 bcrypt.compare(req.param('password'), user.encryptedPassword, function(err, valid) {
-			 console.log('comparison was done');
-			 if (err) return next(err);
+			 console.log('comparison was done' + user.encryptedPassword);
+			 console.log('comparison was done' + req.param('password'));
+			 if (err) {
+			 	 console.log('There was an error' + err);
+				 return next(err);
+			 }
 			 // If the password from the form doesn't match the password from the database...
 			 if (!valid) {
+			 	 console.log('Not valid');
 				 var usernamePasswordMismatchError = [{
 					 name: 'usernamePasswordMismatch',
 					 message: 'Invalid username and password combination.'

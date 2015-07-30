@@ -35,5 +35,8 @@
     "url": "git://github.com/coder/cooporg.git"
   },
   "author": "coder",
-  "license": ""
+  "license": "",
+  "engines": {
+  "node": "0.10.x"
+  }
 }

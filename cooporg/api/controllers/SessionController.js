@@ -77,30 +77,14 @@ module.exports = {
 			 // Log user in
 			 req.session.authenticated = true;
 			 req.session.User = user;
+			 // If the user is also an admin, redirect to the user list (ex /views/user/index.ejs)
+			 // This is used in conjunction with config/policies.js
+			 if (req.session.User.admin) {
+				 res.redirect('/user');
+				 return;
+			 }
 			 res.redirect('/user/show/' + user.id);
 			 // Change status to online
-			 /*
-			 user.online = true;
-			 user.save(function(err, user) {
-				 if (err) return next(err);
-				 // Inform other sockets (e.g. connected sockets that are subscribed) that this user is now logged in
-				 User.publishUpdate(user.id, {
-					 loggedIn: true,
-					 id: user.id,
-					 name: user.name,
-					 action: ' has logged in.'
-				 });
-				 // If the user is also an admin redirect to the user list (e.g. /views/user/index.ejs)
-				 // This is used in conjunction with config/policies.js file
-				 if (req.session.User.admin) {
-					 res.redirect('/user');
-					 return;
-				 }
-
-				 //Redirect to their profile page (e.g. /views/user/show.ejs)
-				 res.redirect('/user/show/' + user.id);
-			 });
-			 */
 		 });
 	 });
  },

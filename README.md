@@ -54,3 +54,4 @@ Change UserController.js to have better error handling
 Policies are middleware functions which run before controllers
 Any of these policies can be applied to a given controller or one or more of its actions within the controller
 npm install sails-mongo --save
+heroku config:set NODE_ENV=production

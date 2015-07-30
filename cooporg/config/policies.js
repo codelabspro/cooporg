@@ -33,6 +33,8 @@ module.exports.policies = {
     'new': 'flash',
     'create': 'flash',
     'show': 'userCanSeeProfile',
+    'edit': 'userCanSeeProfile',
+    'update': 'userCanSeeProfile',
     '*': 'admin'
 
   }

@@ -36,6 +36,16 @@ module.exports = {
       return obj;
     }
   },
+  beforeValidation: function (values, next) {
+    if (typeof values.admin !== 'undefined') {
+      if (values.admin === 'unchecked') {
+        values.admin = false;
+      } else  if (values.admin[1] === 'on') {
+        values.admin = true;
+      }
+    }
+     next();
+  },
   beforeCreate: function (values, next) {
    // This checks to make sure the password and password confirmation match before creating record
    if (!values.password || values.password != values.confirmation) {

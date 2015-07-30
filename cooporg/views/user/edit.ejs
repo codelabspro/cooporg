@@ -3,9 +3,17 @@
   <input value="<%= user.username %>" name="username" type="text" class="form-control"/>
   <input value="<%= user.title %>" name="title" type="text" class="form-control"/>
   <input value="<%= user.email %>" name="email" type="text" class="form-control"/>
+  <!-- Mechanism for changing to admin -->
+  <% if (session.authenticated && session.User.admin) { %>
+    <% if (user.admin) { %>
+    <input type="hidden" name="admin" value="unchecked">
+    <label class="checkbox"><input type="checkbox" name="admin" checked>Admin</label>
+    <% } else { %>
+      <input type="hidden" name="admin" value="unchecked">
+      <label class="checkbox"><input type="checkbox" name="admin">Admin</label>
+  <% } %>
+  <% } %>
+  <!-- End mechanism for changing to admin -->
   <input type="submit" value="Proceed" class="btn btn-lg btn-primary btn-block"/>
   <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>
-
-<a href="/user/edit/<%= user.id %>">Edit</a> |
-<a href="/user">Back</a>

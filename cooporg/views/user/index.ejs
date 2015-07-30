@@ -16,6 +16,11 @@
         <td><%= user.username %></td>
         <td><%= user.title %></td>
         <td><%= user.email %></td>
+        <% if (user.admin) { %>
+          <td><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></td>
+        <% } else { %>
+            <td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></td>
+        <% } %>
         <td><a href="/user/show/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></td>
         <td><a href="/user/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></td>
         <td>
